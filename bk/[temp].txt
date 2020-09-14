@@ -1,0 +1,38 @@
+//    utilDynamicInterface = new UtilDynamicInterface("://resource/json/dialog_demo.json", ui->verticalLayout);
+//    connect(findChild<QPushButton *>("pushButton_cancel"), SIGNAL(clicked()), this, SLOT(pushButton_cancel_clicked()));
+//    connect(findChild<QPushButton *>("pushButton_submit"), SIGNAL(clicked()), this, SLOT(pushButton_submit_clicked()));
+
+//void MainWindow::pushButton_cancel_clicked()
+//{
+//    close();
+//}
+
+//void MainWindow::pushButton_submit_clicked()
+//{
+//    IniFile config = utilDynamicInterface->getIniFile();
+//    IniSection *demo = config.getSection("demo");
+//    for(IniSection::IniItem_it it = demo->begin(); it != demo->end(); it++)
+//    {
+//        QString key = QString::fromStdString(it->key);
+//        QString type = key.split('_')[0];
+//        QString name = key.split('_')[1];
+//        if(type == "lineEdit")
+//        {
+//            it->value = findChild<QLineEdit *>(key)->text().toStdString();
+//        }
+//        else if(type == "comboBox")
+//        {
+//            it->value = findChild<QComboBox *>(key)->currentText().toStdString();
+//        }
+//        else if(type == "spinBox")
+//        {
+//            it->value = to_string(findChild<QSpinBox *>(key)->value());
+//        }
+//        else if(type == "doubleSpinBox")
+//        {
+//            it->value = to_string(findChild<QDoubleSpinBox *>(key)->value());
+//        }
+//    }
+//    config.SaveAs("./config.ini");
+//    close();
+//}

@@ -1,0 +1,103 @@
+{
+    "type": "VerticalLayout",
+    "item": [
+        {
+            "type": "HorizontalLayout",
+            "item": [
+                {
+                    "type": "Label",
+                    "text": "Id:  "
+                },
+                {
+                    "type": "LineEdit",
+                    "name": "lineEdit_id",
+                    "text": "",
+                    "placeHolderText": ""
+                }
+            ]
+        },
+        {
+            "type": "HorizontalLayout",
+            "item": [
+                {
+                    "type": "Label",
+                    "text": "Name:"
+                },
+                {
+                    "type": "LineEdit",
+                    "name": "lineEdit_name",
+                    "text": "",
+                    "placeHolderText": ""
+                }
+            ]
+        },
+        {
+            "type": "HorizontalLayout",
+            "item": [
+                {
+                    "type": "Label",
+                    "text": "Protocol:"
+                },
+                {
+                    "type": "ComboBox",
+                    "name": "comboBox_protocol",
+                    "item": [
+                        "Default",
+                        "TCP",
+                        "UDP"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "HorizontalLayout",
+            "item": [
+                {
+                    "type": "Label",
+                    "text": "SpinBoxTest:"
+                },
+                {
+                    "type": "SpinBox",
+                    "name": "spinBox_paraInt",
+                    "suffix": "suffix",
+                    "minimum": 0,
+                    "maximum": 999999,
+                    "value": 114
+                }
+            ]
+        },
+        {
+            "type": "HorizontalLayout",
+            "item": [
+                {
+                    "type": "Label",
+                    "text": "DoubleSpinBoxTest:"
+                },
+                {
+                    "type": "DoubleSpinBox",
+                    "name": "doubleSpinBox_paraDouble",
+                    "suffix": "suffix",
+                    "decimals": 3,
+                    "minimum": 0.0,
+                    "maximum": 999999.0,
+                    "value": 114.514
+                }
+            ]
+        },
+        {
+            "type": "HorizontalLayout",
+            "item": [
+                {
+                    "type": "PushButton",
+                    "name": "pushButton_cancel",
+                    "text": "Cancel"
+                },
+                {
+                    "type": "PushButton",
+                    "name": "pushButton_submit",
+                    "text": "Submit"
+                }
+            ]
+        }
+    ]
+}

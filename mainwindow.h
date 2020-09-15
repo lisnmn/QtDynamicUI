@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "util_dynamic_interface.h"
+#include "dynamicUI.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,7 +22,7 @@ private slots:
     
 private:
     Ui::MainWindow *ui;
-    UtilDynamicInterface* utilDynamicInterface;
+    DynamicUI dynamicUI;
 
 };
 #endif // MAINWINDOW_H

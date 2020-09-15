@@ -13,18 +13,17 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    utilDynamicInterface = new UtilDynamicInterface("dialog_demo.ini", ui->verticalLayout);
-    utilDynamicInterface->buildInterface();
+    dynamicUI.loadInterface("dialog_demo.ini", ui->verticalLayout);
+    dynamicUI.buildInterface("parameters");
 }
 
 MainWindow::~MainWindow() {
     delete ui;
-    delete utilDynamicInterface;
 }
 
 void MainWindow::on_pushButton_submit_clicked() {
     // Submit
-    if(!utilDynamicInterface->saveIniFile()) {
+    if(!dynamicUI.saveIniFile()) {
         QMessageBox::information(this, "Success", "Saving iniFile successfully.");
     } else {
         QMessageBox::critical(this, "Error", "Saving iniFile failed!");

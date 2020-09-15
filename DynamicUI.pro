@@ -16,15 +16,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    dynamicUI.cpp \
     inifile.cpp \
     main.cpp \
-    mainwindow.cpp \
-    util_dynamic_interface.cpp
+    mainwindow.cpp
 
 HEADERS += \
+    dynamicUI.h \
     inifile.h \
-    mainwindow.h \
-    util_dynamic_interface.h
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui

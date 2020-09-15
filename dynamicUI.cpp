@@ -1,6 +1,8 @@
-#include "util_dynamic_interface.h"
+#include "dynamicUI.h"
 
 #include <float.h>
+
+#include <string>
 
 #include <QDebug>
 #include <QFile>
@@ -15,20 +17,21 @@
 
 #include "inifile.h"
 
-UtilDynamicInterface::UtilDynamicInterface(const std::string& filepath, QBoxLayout *layout) {
-    if(mIniFile.Load(filepath)) {
-        qDebug() << "Loading " << filepath.c_str() << " failed!";
-    }
-    mMainLayout = layout;
-}
-
-UtilDynamicInterface::~UtilDynamicInterface() {
+DynamicUI::~DynamicUI() {
     // mIniFile.Save();
     mMainLayout = nullptr;
 }
 
-void UtilDynamicInterface::buildInterface() {
-    const char* section_name = "parameters";
+void DynamicUI::loadInterface(const char* filepath, QBoxLayout *layout)
+{
+    if(mIniFile.Load(filepath)) {
+        qDebug() << "Loading " << filepath << " failed!";
+    }
+    mMainLayout = layout;
+}
+
+void DynamicUI::buildInterface(const char* sectionName) {
+    const char* section_name = sectionName;
     inifile::IniSection* section = mIniFile.getSection(section_name);
     for(auto it = section->begin(); it != section->end(); it++) {
         // [key] = [value]
@@ -129,6 +132,6 @@ void UtilDynamicInterface::buildInterface() {
     }
 }
 
-int UtilDynamicInterface::saveIniFile() {
+int DynamicUI::saveIniFile() {
     return mIniFile.Save();
 }

@@ -1,18 +1,17 @@
 #ifndef UTILDYNAMICINTERFACEADV_H
 #define UTILDYNAMICINTERFACEADV_H
 
-#include <string>
-
 #include <QBoxLayout>
 
 #include "inifile.h"
 
-class UtilDynamicInterface : public QObject {
+class DynamicUI : public QObject {
     Q_OBJECT
 public:
-    UtilDynamicInterface(const std::string& filepath, QBoxLayout* layout);
-    ~UtilDynamicInterface();
-    void buildInterface();
+    DynamicUI();
+    ~DynamicUI();
+    void loadInterface(const char* filepath, QBoxLayout* layout);
+    void buildInterface(const char* sectionName);
     int saveIniFile();
     
 private:

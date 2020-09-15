@@ -17,6 +17,10 @@
 
 #include "inifile.h"
 
+DynamicUI::DynamicUI() {
+
+}
+
 DynamicUI::~DynamicUI() {
     // mIniFile.Save();
     mMainLayout = nullptr;
